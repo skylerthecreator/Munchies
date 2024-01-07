@@ -6,7 +6,7 @@ class DweetForm(forms.ModelForm):
         required=True,
         widget=forms.widgets.Textarea(
             attrs={
-                "placeholder": "Make a Munch...",
+                "placeholder": "Enter recipe here...",
                 "class": "textarea is-medium",
             }
         ),
