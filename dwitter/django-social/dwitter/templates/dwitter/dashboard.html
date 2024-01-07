@@ -1,5 +1,3 @@
-<!-- dwitter/templates/dwitter/dashboard.html -->
-
 {% extends 'base.html' %}
 
 {% block content %}
@@ -30,7 +28,16 @@
 
     <div class="block">
         <a href="{% url 'dwitter:profile' request.user.profile.id %} ">
-            <button class="button is-rounded has-text-weight-bold has-text-white has-text-centered" style="height:30;width:200px; background-color: #F58216; color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif;">
+            <button class="button is-rounded 
+            has-text-weight-bold 
+            has-text-white 
+            has-text-centered" 
+            style="height:30;
+            width:200px; 
+            background-color: #F58216; 
+            color: #F58216; 
+            font-weight: bold;
+            font-family: Noto Sans, sans-serif;">
                 MY MUNCHES
             </button>
         </a>
@@ -38,21 +45,25 @@
 
     <div class="block">
         <div class="block">
-            <h2 style = "color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif; font-size:3vw;" ; >MAKE A MUNCH</p>
+            <h2 style = "color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif; font-size:3vw;" ; >ADD A RECIPE</p>
         </div>
         <div class="block">
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class="button is-success is-fullwidth is-medium mt-5"
+                <button class="button is-rounded is-success is-fullwidth is-medium mt-5"
                         type="submit" 
-                        style="background-color: #F58216; font-weight: bold ; font-family: Noto Sans, sans-serif;">POST!
-                       
+                        style="background-color: #F58216; 
+                        font-weight: bold ; 
+                        font-family: 
+                        Noto Sans, 
+                        sans-serif;">POST!                       
                 </button>
             </form>
         </div>
     </div>
 
 </div>
+
 
 {% endblock content %}

@@ -12,6 +12,8 @@ class DweetForm(forms.ModelForm):
         ),
         label="",
     )
+    cover = forms.ImageField
+
 
     class Meta:
         model = Dweet
