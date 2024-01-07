@@ -9,20 +9,16 @@
           href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Munchies</title>
 </head>
-<body>
-    <a href="{% url 'dwitter:dashboard' %} ">
-        <section >
-            <div class="hero-body">
-                <a href="https://imgbb.com/"><img src="https://i.ibb.co/fNtm4mQ/logo-header.png" alt="logo-header" border="0"></a>                <p class="subtitle is-4">
-                    
-
+<body style="background-color:#EDEDED">
+    <a href="{% url 'dwitter:dashboard' %} ">        
+        <section class="has-background-white">       
+            <div class="hero-body">                
+                <a href="/"><img src="https://i.ibb.co/fNtm4mQ/logo-header.png" alt="logo-header"></a>                                  
             </div>
         </section>
         </a>
-
-    <div class="container">
+    <div class="container" >
         <div class="columns">
-
             {% block content %}
 
             {% endblock content %}
