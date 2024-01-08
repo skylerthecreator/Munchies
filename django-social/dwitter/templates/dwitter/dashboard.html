@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" >
+    <div class="columns">
+
+<div class="column">
+    <br>
+    {% for dweet in dweets %}
+    <div class="box" >
+        <div style = "color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif; font-size: large;">
+            {{dweet.body}}
+            <br>
+        </div>
+        <!-- <p>{{dweet.image}}</p> -->
+        <br>
+        <img style = "height: 150px" src = {{dweet.image}}/>
+        <span class="is-small has-text-grey-light" >
+            
+            <br>
+            <div>{{ dweet.created_at }} by {{ dweet.user.username }}</div >
+            
+            <div style = "font-weight: bold;">   Recipe Details </div>
+        </span>
+    </div>
+{% endfor %}
+
+</div>
+
+<div class="column is-one-third">
+
+    <div class="block">
+        <br>
+        <a href="{% url 'dwitter:profile_list' %} ">
+            <button style = "background-color: #FFFFFF; height:30;width:200px; color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif;" class="button is-rounded has-text-weight-bold has-text-centered">
+                ALL MUNCHERS
+            </button>
+        </a>
+    </div>
+
+    <div class="block">
+        <a href="{% url 'dwitter:profile' request.user.profile.id %} ">
+            <button class="button is-rounded 
+            has-text-weight-bold 
+            has-text-white 
+            has-text-centered" 
+            style="height:30;
+            width:200px; 
+            background-color: #F58216; 
+            color: #F58216; 
+            font-weight: bold;
+            font-family: Noto Sans, sans-serif;">
+                MY MUNCHES
+            </button>
+        </a>
+    </div>
+
+    <div class="block">
+        <div class="block">
+            <h2 style = "color: #F58216; font-weight: bold ;font-family: Noto Sans, sans-serif; font-size:3vw;" >ADD A RECIPE</p>
+        </div>
+        <div class="block">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="button is-rounded is-success is-fullwidth is-medium mt-5"
+                        type="submit" 
+                        style="background-color: #F58216; 
+                        font-weight: bold ; 
+                        font-family: 
+                        Noto Sans, 
+                        sans-serif;">POST!                       
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+{% endblock content %}
